@@ -72,7 +72,7 @@ Execute no terminal os comandos:
   Isso irá instalar as dependências de desenvolvimento do projeto, que no caso é apenas o **promise**
 
 ## parte-2
-[voltar](#ÍNDICE)
+voltar para o [índice](#índice)
 ### Como eu preparo um projeto NOVO? ###
 
 Fora os itens acima rode os comandos abaixo no terminal
@@ -84,6 +84,7 @@ O promise será necessário para executar funções próprias que precisam traba
 
 ____
 ## parte-3
+voltar para o [índice](#índice)
 # Introdução ao Jasmine #
 
 ## Um pouco sobre **Jasmine** ##
@@ -144,6 +145,7 @@ Muito úteis para reinicialização de variáveis.
 É o teste em si, essa função é que é capaz de avaliar um resultado obtido com o resultado esperado.
 
 ## parte-4
+voltar para o [índice](#índice)
 ### Funções de teste (Expectations) ###
 
 Existem várias formas de se fazer isso, todas elas o primeiro parâmetro é o resultado obtido e o segundo o resultado esperado, exemplo:
@@ -230,6 +232,7 @@ expect(bar).toThrow();
 
 ____
 ## parte-5
+voltar para o [índice](#índice)
 ### Testes Assíncronos com **[Jasmine 2.x](http://jasmine.github.io/2.3/introduction.html)** ###
 
 Usando o [Protractor](http://angular.github.io/protractor/#/jasmine-upgrade) eventualmente você precisará lidar com métodos assíncronos, não tem escapatória.
@@ -266,6 +269,7 @@ function setJasmineTimeout (milisenconds) {
 ```
 
 ## parte-6
+voltar para o [índice](#índice)
 ### Testes Assíncronos com **Jasmine 1.3** ###
 Essa parte fica a penas a título de curiosidade ou caso precise dar uma manutenção que tenha jasmine nessa versão.
 
@@ -344,6 +348,7 @@ Exemplo:
 ```
 ____
 ## parte-7
+voltar para o [índice](#índice)
 # Introdução ao Protractor #
 
 ## Um pouco sobre Protractor ##
@@ -420,6 +425,7 @@ saiba mais olhando nas [APIs do protractor](http://angular.github.io/protractor/
 
 ____
 ## parte-8
+voltar para o [índice](#índice)
 # Testes para aplicações não angular #
 Não é necessário aprender outras formas de codificar seu código para testar aplicações web não angular.
 
@@ -433,6 +439,7 @@ O comando acima quando marcado para ignorar a sincronização desativa a espera 
 
 ____
 ## parte-9
+voltar para o [índice](#índice)
 ## Modularização dos testes ##
 É possível e eu recomendo fortemente a modularização das suas funcionalidades de forma que você não acabe com um único arquivos gigante descrevendo todo o seu teste.
 
@@ -491,6 +498,7 @@ describe('1 - Nome do caso de teste: ', function () {
 ```
 
 ## parte-10
+voltar para o [índice](#índice)
 # Padrão para escrever os testes #
 Segue abaixo algumas recomendações minhas baseadas em minha atual experiência.
 
@@ -506,6 +514,7 @@ Segue abaixo algumas recomendações minhas baseadas em minha atual experiência
 * 10) Divirta-se! :p
 
 ## parte-11
+voltar para o [índice](#índice)
 # Padrão para organizar os arquivos de testes #
 ```javascript
 Teste //Diretório dos arquivos de teste
@@ -522,6 +531,7 @@ __GerenciarContrato.js
 ```
 
 ## Parte-12
+voltar para o [índice](#índice)
 ## Mantendo registros do teste ##
 Existe uma forma de capturar prints das telas durante o processo de teste, permitindo assim manter registros sobre a execução dos testes, segue abaixo o código necessário:
 
