@@ -45,20 +45,20 @@ Porém não usarei esta ferramenta neste projeto, pois irei testar sobre o site 
 O Selenium serve para ativar um servidor local onde os testes serão rodados em sua aplicação web local.
 
 ## ÍNDICE ##
-* [Como eu preparo o projeto?](#indice1)
-* [Como eu preparo um projeto NOVO?](#indice2)
-* [Introdução ao Jasmine](#indice3)
-* [Funções de teste (Expectations)](#indice4)
-* [Testes Assíncronos com **Jasmine 2.x**](#indice5)
-* [Testes Assíncronos com **Jasmine 1.3**](#indice6)
-* [Introdução ao Protractor](#indice7)
-* [Testes para aplicações não angular](#indice8)
-* [Modularização dos testes](#indice9)
-* [Padrão para escrever os testes](#indice10)
-* [Padrão para organizar os arquivos de testes](#indice11)
-* [Mantendo registros do teste](#indice12)
+* [Como eu preparo o projeto?](#indice-1)
+* [Como eu preparo um projeto NOVO?](#indice-2)
+* [Introdução ao Jasmine](#indice-3)
+* [Funções de teste (Expectations)](#indice-4)
+* [Testes Assíncronos com **Jasmine 2.x**](#indice-5)
+* [Testes Assíncronos com **Jasmine 1.3**](#indice-6)
+* [Introdução ao Protractor](#indice-7)
+* [Testes para aplicações não angular](#indice-8)
+* [Modularização dos testes](#indice-9)
+* [Padrão para escrever os testes](#indice-10)
+* [Padrão para organizar os arquivos de testes](#indice-11)
+* [Mantendo registros do teste](#indice-12)
 
-(#indice1)
+## indice-1
 ### Como eu preparo o projeto? ###
 Execute no terminal os comandos:
 
@@ -70,7 +70,7 @@ Execute no terminal os comandos:
 
   Isso irá instalar as dependências de desenvolvimento do projeto, que no caso é apenas o **promise**
 
-(#indice2)
+## indice-2
 ### Como eu preparo um projeto NOVO? ###
 
 Fora os itens acima rode os comandos abaixo no terminal
@@ -81,7 +81,7 @@ O promise será necessário para executar funções próprias que precisam traba
   
 
 ____
-(#indice3)
+## indice-3
 # Introdução ao Jasmine #
 
 ## Um pouco sobre **Jasmine** ##
@@ -141,7 +141,7 @@ Muito úteis para reinicialização de variáveis.
 
 É o teste em si, essa função é que é capaz de avaliar um resultado obtido com o resultado esperado.
 
-(#indice4)
+## indice-4
 ### Funções de teste (Expectations) ###
 
 Existem várias formas de se fazer isso, todas elas o primeiro parâmetro é o resultado obtido e o segundo o resultado esperado, exemplo:
@@ -227,7 +227,7 @@ expect(bar).toThrow();
 ```
 
 ____
-(#indice5)
+## indice-5
 ### Testes Assíncronos com **[Jasmine 2.x](http://jasmine.github.io/2.3/introduction.html)** ###
 
 Usando o [Protractor](http://angular.github.io/protractor/#/jasmine-upgrade) eventualmente você precisará lidar com métodos assíncronos, não tem escapatória.
@@ -263,7 +263,7 @@ function setJasmineTimeout (milisenconds) {
 }
 ```
 
-(#indice6)
+## indice-6
 ### Testes Assíncronos com **Jasmine 1.3** ###
 Essa parte fica a penas a título de curiosidade ou caso precise dar uma manutenção que tenha jasmine nessa versão.
 
@@ -341,7 +341,7 @@ Exemplo:
         });
 ```
 ____
-(#indice7)
+## indice-7
 # Introdução ao Protractor #
 
 ## Um pouco sobre Protractor ##
@@ -417,7 +417,7 @@ elem.clear();
 saiba mais olhando nas [APIs do protractor](http://angular.github.io/protractor/#/api)
 
 ____
-(#indice8)
+## indice-8
 # Testes para aplicações não angular #
 Não é necessário aprender outras formas de codificar seu código para testar aplicações web não angular.
 
@@ -430,7 +430,7 @@ Basta usar o código abaixo antes de começar seus testes, como por exemplo na f
 O comando acima quando marcado para ignorar a sincronização desativa a espera por carregamentos (dos processos do angular) o que permite usar o DSL "element <.find>" ao invés de "browser.drive <.find>"
 
 ____
-(#indice9)
+## indice-9
 ## Modularização dos testes ##
 É possível e eu recomendo fortemente a modularização das suas funcionalidades de forma que você não acabe com um único arquivos gigante descrevendo todo o seu teste.
 
@@ -488,7 +488,7 @@ describe('1 - Nome do caso de teste: ', function () {
 
 ```
 
-(#indice10)
+## indice-10
 # Padrão para escrever os testes #
 Segue abaixo algumas recomendações minhas baseadas em minha atual experiência.
 
@@ -503,7 +503,7 @@ Segue abaixo algumas recomendações minhas baseadas em minha atual experiência
 * 9) Se seu código precisa de algumas variáveis/constantes para executá-lo, declare-as no topo do arquivo de teste.
 * 10) Divirta-se! :p
 
-(#indice11)
+## indice-11
 # Padrão para organizar os arquivos de testes #
 ```javascript
 Teste //Diretório dos arquivos de teste
@@ -519,7 +519,7 @@ __CRUDE-Clientes-spec.js
 __GerenciarContrato.js
 ```
 
-(#indice12)
+## indice-12
 ## Mantendo registros do teste ##
 Existe uma forma de capturar prints das telas durante o processo de teste, permitindo assim manter registros sobre a execução dos testes, segue abaixo o código necessário:
 
