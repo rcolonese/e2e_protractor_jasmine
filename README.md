@@ -58,7 +58,8 @@ O Selenium serve para ativar um servidor local onde os testes serão rodados em 
 * [Padrão para organizar os arquivos de testes](#indice-11)
 * [Mantendo registros do teste](#indice-12)
 
-## indice-1 (voltar para [ÍNDICE](#ÍNDICE))
+## indice-1
+voltar para [indíce](#ÍNDICE)
 ### Como eu preparo o projeto? ###
 Execute no terminal os comandos:
 
