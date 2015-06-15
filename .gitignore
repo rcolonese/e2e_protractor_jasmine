@@ -1,0 +1,25 @@
+# --------------------
+# Node Files
+# --------------------
+.nodemonignore
+npm-debug.log
+node_modules/
+hooks/
+.DS_Store
+
+# --------------------
+# SASS Files
+# --------------------
+.scss/
+
+# --------------------
+# Bower Files
+# --------------------
+.bower-*/
+bower_components
+
+# --------------------
+# App Files
+# --------------------
+test/registros/
+platforms/
