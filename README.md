@@ -44,7 +44,7 @@ Porém não usarei esta ferramenta neste projeto, pois irei testar sobre o site 
 
 O Selenium serve para ativar um servidor local onde os testes serão rodados em sua aplicação web local.
 
-## ÍNDICE
+## índice
 * [Parte 1 - Como eu preparo o projeto?](#parte-1)
 * [Parte 2 - Como eu preparo um projeto NOVO?](#parte-2)
 * [Parte 3 - Introdução ao Jasmine](#parte-3)
@@ -59,6 +59,7 @@ O Selenium serve para ativar um servidor local onde os testes serão rodados em 
 * [Parte 12 - Mantendo registros do teste](#parte-12)
 
 ## parte-1
+voltar para o [índice](#índice)
 ### Como eu preparo o projeto? ###
 Execute no terminal os comandos:
 
