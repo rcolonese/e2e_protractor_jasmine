@@ -597,11 +597,11 @@ Este projeto possui 3 arquivos de configuração, segue abaixo a descrição de 
 Estando na raiz do seu projeto
 
 No terminal digite: 
-´´´
+´´´terminal
 protractor <nome do arquivo de configuração>
 ´´´
 
 Exemplo: 
-´´´
+´´´terminal
 protractor Config-angular.js
 ´´´
