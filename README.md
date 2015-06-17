@@ -507,7 +507,7 @@ Segue abaixo algumas recomendações minhas baseadas em minha atual experiência
 
 * 1) Tente criar um conceito a ser atendido em cada **describe**, como por exemplo atender a um caso de uso específico, no final do texto termine com um caractere separador como ":" isso ajudará a encontrar o caso de teste quando um teste falhar.
 * 2) Não perca tempo numerando os describes e os it(s), no próprio desenvolvimento do teste ou na manutenção dele isso te dará muito trabalho, preocupe-se em usar um portugues claro para definir os describes e os it(s)
-* 3) Use a descrição do **it** para identificar o item sendo testado.
+* 3) Use a descrição do **it** para identificar o item sendo testado, como por exemplo em um caso de uso de inclusão de cliente um **it** pode ser o preenchimento do email e a verificação se a aplicação validou o email.
 * 4) Declare as variáveis começando por letra minúscula.
 * 5) Declare as classes e funções começando por Letras Maiúsculas.
 * 6) De o mesmo nome de uma classe de um módulo para o arquivo dela.
