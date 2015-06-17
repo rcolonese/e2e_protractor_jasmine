@@ -57,6 +57,7 @@ O Selenium serve para ativar um servidor local onde os testes serão rodados em 
 * [Parte 10 - Padrão para escrever os testes](#parte-10)
 * [Parte 11 - Padrão para organizar os arquivos de testes](#parte-11)
 * [Parte 12 - Mantendo registros do teste](#parte-12)
+* [Parte 13 - Como executo os testes desse projeto?](#parte-13)
 
 ## parte-1
 voltar para o [índice](#índice)
@@ -464,14 +465,14 @@ var MeuModulo = function () {
 };
 
 //ex.:1) Forma simples
-module.exports = new TestFramework();
+module.exports = new MeuModulo();
 
 ou
 
 //Ex.:2) Forma padronizada para acessar os dados do módulo, que permite inclusive a exposição de outras instancias de classes, caso seja necessário. 
 //Eu recomendo que seja mantido o mais simples/enxuto possível.
 module.exports = {
-    mod : new TestFramework();
+    mod : new MeuModulo();
 }
 ```
 
@@ -489,6 +490,8 @@ describe('1 - Nome do caso de teste: ', function () {
         //Exemplo baseado no caso ex.:1 acima
         meuModulo.FuncaoPublica();
 
+        //ou
+        
         //Exemplo baseado no caso ex.:2 acima
         meuModulo.mod.FuncaoPublica();
     });
@@ -502,16 +505,15 @@ voltar para o [índice](#índice)
 # Padrão para escrever os testes #
 Segue abaixo algumas recomendações minhas baseadas em minha atual experiência.
 
-* 1) Tente criar um conceito a ser atendido em cada **describe**, como por exemplo atender a um caso de uso específico.
-* 2) Numere os describes, isso ajudará a encontrar o teste que der falha
+* 1) Tente criar um conceito a ser atendido em cada **describe**, como por exemplo atender a um caso de uso específico, no final do texto termine com um caractere separador como ":" isso ajudará a encontrar o caso de teste quando um teste falhar.
+* 2) Não perca tempo numerando os describes e os it(s), no próprio desenvolvimento do teste ou na manutenção dele isso te dará muito trabalho, preocupe-se em usar um portugues claro para definir os describes e os it(s)
 * 3) Use a descrição do **it** para identificar o item sendo testado.
-* 4) Numere o **It** hierarquicamente ao seu pai, exemplo, o quarto it do nono describe teria o inicio do seu texto começando por '9.4 - etc.'
-* 5) Declare as variáveis começando por letra minúscula.
-* 6) Declare as classes e funções começando por Letras Maiúsculas.
-* 7) De o mesmo nome de uma classe de um módulo para o arquivo dela.
-* 8) Comente suas funções, Describe e ITs para que o próximo compreenda o que você programou sem ter que entender seu código.
-* 9) Se seu código precisa de algumas variáveis/constantes para executá-lo, declare-as no topo do arquivo de teste.
-* 10) Divirta-se! :p
+* 4) Declare as variáveis começando por letra minúscula.
+* 5) Declare as classes e funções começando por Letras Maiúsculas.
+* 6) De o mesmo nome de uma classe de um módulo para o arquivo dela.
+* 7) Comente suas funções, Describe e ITs para que o próximo desenvolvedor compreenda o que você programou sem ter que ler e interpretar seu código.
+* 8) Se seu código precisa de algumas variáveis/constantes para executá-lo, declare-as no topo do arquivo de teste.
+* 9) Divirta-se! :p
 
 ## parte-11
 voltar para o [índice](#índice)
@@ -525,9 +527,8 @@ ____pagina //Se a aplicação tem mais de uma rota coloque todos os arquivos em 
 __*-spec.js//Na raiz do diretório mantenha todos os seus arquivos de testes
 //Exemplos
 __Login-spec.js
-__CRUDE-Contatos-spec.js
-__CRUDE-Clientes-spec.js
-__GerenciarContrato.js
+__CRUDE-Contatos-spec.js //Spec específico para os casos de uso de CRUDE para Contatos
+__CRUDE-Clientes-spec.js //Spec específico para os casos de uso de CRUDE para Clientes
 ```
 
 ## Parte-12
@@ -571,3 +572,30 @@ Exemplo:
 
 * 1.1-login.jpg
 * 2.3.1-<nome descrito na função it>
+
+## parte-13
+voltar para o [índice](#índice)
+## Como executo os testes desse projeto? ##
+
+** Sobre os arquivos de configuração **
+
+Este projeto possui 3 arquivos de configuração, segue abaixo a descrição de cada um
+1) Config-angular.js
+
+  Esta configuração roda apenas o spec da página do google, usa o jasmine 1.x e precisa de uma boa conexão com a internet para rodar uma vez que o recurso do site não é local
+  
+2) Config-basic.js
+  
+  Esta configuração roda 1 spec apenas usando o jasmine2, O propósito é mostrar como o Jasmine funciona, logo, não faz uso de teste sobre uma aplicação, apenas executa expectations do jasmine, ou seja, não tem uso do protractor para interagir com uma aplicação.
+  
+3) Config-todos.js
+  
+  Esta configuração roda 2 specs em sequencia, o objetivo é mostrar que é possível e recomendável que se divida o teste em vários arquivos spec para deixa-lo mais fácil de manter.
+  
+** Executando os testes **
+
+Estando na raiz do seu projeto
+
+No terminal digite: protractor <nome do arquivo de configuração>
+
+Exemplo: protractor Config-angular.js
