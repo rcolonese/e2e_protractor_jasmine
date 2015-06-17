@@ -577,7 +577,7 @@ Exemplo:
 voltar para o [índice](#índice)
 ## Como executo os testes desse projeto? ##
 
-** Sobre os arquivos de configuração **
+**Sobre os arquivos de configuração**
 
 Este projeto possui 3 arquivos de configuração, segue abaixo a descrição de cada um
 1) Config-angular.js
@@ -592,7 +592,7 @@ Este projeto possui 3 arquivos de configuração, segue abaixo a descrição de 
   
   Esta configuração roda 2 specs em sequencia, o objetivo é mostrar que é possível e recomendável que se divida o teste em vários arquivos spec para deixa-lo mais fácil de manter.
   
-** Executando os testes **
+**Executando os testes**
 
 Estando na raiz do seu projeto
 
