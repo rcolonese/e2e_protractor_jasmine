@@ -42,7 +42,7 @@ Segue abaixo o passo a passo
 
 Porém não usarei esta ferramenta neste projeto, pois irei testar sobre o site do [angularjs](https://angularjs.org/)
 
-O Selenium serve para ativar um servidor local onde os testes serão rodados em sua aplicação web local.
+O Selenium serve para ativar um servidor local onde os testes serão rodados em sua aplicação, esteja ela na web ou local. Ele permite rodar em todos os browsers, e sem o uso dele só é possível fazer conexão direta com o Firefox e com o Chrome.
 
 ## índice
 * [Parte 1 - Como eu preparo o projeto?](#parte-1)
