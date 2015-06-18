@@ -6,7 +6,7 @@ Uso o Protractor, que é adequado para testar aplicações com AngularJs, porém
 
 aprenda como tirar proveito do jasmine 2.x e 1.3 
 
-A versão padrão do protractor é a 1.3, mas basta uma modificação no arquivo de configuração que você pode usar a versão 2.x. E vale a pena! veja como [aqui](http://angular.github.io/protractor/#/jasmine-upgrade)
+A versão padrão do jasmine no protractor é a 1.3, mas basta uma modificação no arquivo de configuração que você pode usar a versão 2.x. E vale a pena! veja como [aqui](http://angular.github.io/protractor/#/jasmine-upgrade)
 
 ____
 ### Pra que serve esse repositório? ###
@@ -42,8 +42,25 @@ Segue abaixo o passo a passo
 
 Porém não usarei esta ferramenta neste projeto, pois irei testar sobre o site do [angularjs](https://angularjs.org/)
 
-O Selenium serve para ativar um servidor local onde os testes serão rodados em sua aplicação web local.
+O Selenium serve para ativar um servidor local onde os testes serão rodados em sua aplicação, esteja ela na web ou local. Ele permite rodar em todos os browsers, e sem o uso dele só é possível fazer conexão direta com o Firefox e com o Chrome.
 
+## índice
+* [Parte 1 - Como eu preparo o projeto?](#parte-1)
+* [Parte 2 - Como eu preparo um projeto NOVO?](#parte-2)
+* [Parte 3 - Introdução ao Jasmine](#parte-3)
+* [Parte 4 - Funções de teste (Expectations)](#parte-4)
+* [Parte 5 - Testes Assíncronos com **Jasmine 2.x**](#parte-5)
+* [Parte 6 - Testes Assíncronos com **Jasmine 1.3**](#parte-6)
+* [Parte 7 - Introdução ao Protractor](#parte-7)
+* [Parte 8 - Testes para aplicações não angular](#parte-8)
+* [Parte 9 - Modularização dos testes](#parte-9)
+* [Parte 10 - Padrão para escrever os testes](#parte-10)
+* [Parte 11 - Padrão para organizar os arquivos de testes](#parte-11)
+* [Parte 12 - Mantendo registros do teste](#parte-12)
+* [Parte 13 - Como executo os testes desse projeto?](#parte-13)
+
+## parte-1
+voltar para o [índice](#índice)
 ### Como eu preparo o projeto? ###
 Execute no terminal os comandos:
 
@@ -55,6 +72,8 @@ Execute no terminal os comandos:
 
   Isso irá instalar as dependências de desenvolvimento do projeto, que no caso é apenas o **promise**
 
+## parte-2
+voltar para o [índice](#índice)
 ### Como eu preparo um projeto NOVO? ###
 
 Fora os itens acima rode os comandos abaixo no terminal
@@ -65,6 +84,8 @@ O promise será necessário para executar funções próprias que precisam traba
   
 
 ____
+## parte-3
+voltar para o [índice](#índice)
 # Introdução ao Jasmine #
 
 ## Um pouco sobre **Jasmine** ##
@@ -124,6 +145,8 @@ Muito úteis para reinicialização de variáveis.
 
 É o teste em si, essa função é que é capaz de avaliar um resultado obtido com o resultado esperado.
 
+## parte-4
+voltar para o [índice](#índice)
 ### Funções de teste (Expectations) ###
 
 Existem várias formas de se fazer isso, todas elas o primeiro parâmetro é o resultado obtido e o segundo o resultado esperado, exemplo:
@@ -209,6 +232,8 @@ expect(bar).toThrow();
 ```
 
 ____
+## parte-5
+voltar para o [índice](#índice)
 ### Testes Assíncronos com **[Jasmine 2.x](http://jasmine.github.io/2.3/introduction.html)** ###
 
 Usando o [Protractor](http://angular.github.io/protractor/#/jasmine-upgrade) eventualmente você precisará lidar com métodos assíncronos, não tem escapatória.
@@ -244,6 +269,8 @@ function setJasmineTimeout (milisenconds) {
 }
 ```
 
+## parte-6
+voltar para o [índice](#índice)
 ### Testes Assíncronos com **Jasmine 1.3** ###
 Essa parte fica a penas a título de curiosidade ou caso precise dar uma manutenção que tenha jasmine nessa versão.
 
@@ -321,6 +348,8 @@ Exemplo:
         });
 ```
 ____
+## parte-7
+voltar para o [índice](#índice)
 # Introdução ao Protractor #
 
 ## Um pouco sobre Protractor ##
@@ -396,6 +425,8 @@ elem.clear();
 saiba mais olhando nas [APIs do protractor](http://angular.github.io/protractor/#/api)
 
 ____
+## parte-8
+voltar para o [índice](#índice)
 # Testes para aplicações não angular #
 Não é necessário aprender outras formas de codificar seu código para testar aplicações web não angular.
 
@@ -408,6 +439,8 @@ Basta usar o código abaixo antes de começar seus testes, como por exemplo na f
 O comando acima quando marcado para ignorar a sincronização desativa a espera por carregamentos (dos processos do angular) o que permite usar o DSL "element <.find>" ao invés de "browser.drive <.find>"
 
 ____
+## parte-9
+voltar para o [índice](#índice)
 ## Modularização dos testes ##
 É possível e eu recomendo fortemente a modularização das suas funcionalidades de forma que você não acabe com um único arquivos gigante descrevendo todo o seu teste.
 
@@ -432,14 +465,14 @@ var MeuModulo = function () {
 };
 
 //ex.:1) Forma simples
-module.exports = new TestFramework();
+module.exports = new MeuModulo();
 
 ou
 
 //Ex.:2) Forma padronizada para acessar os dados do módulo, que permite inclusive a exposição de outras instancias de classes, caso seja necessário. 
 //Eu recomendo que seja mantido o mais simples/enxuto possível.
 module.exports = {
-    mod : new TestFramework();
+    mod : new MeuModulo();
 }
 ```
 
@@ -457,6 +490,8 @@ describe('1 - Nome do caso de teste: ', function () {
         //Exemplo baseado no caso ex.:1 acima
         meuModulo.FuncaoPublica();
 
+        //ou
+        
         //Exemplo baseado no caso ex.:2 acima
         meuModulo.mod.FuncaoPublica();
     });
@@ -465,21 +500,23 @@ describe('1 - Nome do caso de teste: ', function () {
 
 ```
 
+## parte-10
+voltar para o [índice](#índice)
 # Padrão para escrever os testes #
 Segue abaixo algumas recomendações minhas baseadas em minha atual experiência.
 
-* 1) Tente criar um conceito a ser atendido em cada **describe**, como por exemplo atender a um caso de uso específico.
-* 2) Numere os describes, isso ajudará a encontrar o teste que der falha
-* 3) Use a descrição do **it** para identificar o item sendo testado.
-* 4) Numere o **It** hierarquicamente ao seu pai, exemplo, o quarto it do nono describe teria o inicio do seu texto começando por '9.4 - etc.'
-* 5) Declare as variáveis começando por letra minúscula.
-* 6) Declare as classes e funções começando por Letras Maiúsculas.
-* 7) De o mesmo nome de uma classe de um módulo para o arquivo dela.
-* 8) Comente suas funções, Describe e ITs para que o próximo compreenda o que você programou sem ter que entender seu código.
-* 9) Se seu código precisa de algumas variáveis/constantes para executá-lo, declare-as no topo do arquivo de teste.
-* 10) Divirta-se! :p
+* 1) Tente criar um conceito a ser atendido em cada **describe**, como por exemplo atender a um caso de uso específico, no final do texto termine com um caractere separador como ":" isso ajudará a encontrar o caso de teste quando um teste falhar.
+* 2) Não perca tempo numerando os describes e os it(s), no próprio desenvolvimento do teste ou na manutenção dele isso te dará muito trabalho, preocupe-se em usar um portugues claro para definir os describes e os it(s)
+* 3) Use a descrição do **it** para identificar o item sendo testado, como por exemplo em um caso de uso de inclusão de cliente um **it** pode ser o preenchimento do email e a verificação se a aplicação validou o email.
+* 4) Declare as variáveis começando por letra minúscula.
+* 5) Declare as classes e funções começando por Letras Maiúsculas.
+* 6) De o mesmo nome de uma classe de um módulo para o arquivo dela.
+* 7) Comente suas funções, Describe e ITs para que o próximo desenvolvedor compreenda o que você programou sem ter que ler e interpretar seu código.
+* 8) Se seu código precisa de algumas variáveis/constantes para executá-lo, declare-as no topo do arquivo de teste.
+* 9) Divirta-se! :p
 
-
+## parte-11
+voltar para o [índice](#índice)
 # Padrão para organizar os arquivos de testes #
 ```javascript
 Teste //Diretório dos arquivos de teste
@@ -490,11 +527,12 @@ ____pagina //Se a aplicação tem mais de uma rota coloque todos os arquivos em 
 __*-spec.js//Na raiz do diretório mantenha todos os seus arquivos de testes
 //Exemplos
 __Login-spec.js
-__CRUDE-Contatos-spec.js
-__CRUDE-Clientes-spec.js
-__GerenciarContrato.js
+__CRUDE-Contatos-spec.js //Spec específico para os casos de uso de CRUDE para Contatos
+__CRUDE-Clientes-spec.js //Spec específico para os casos de uso de CRUDE para Clientes
 ```
 
+## Parte-12
+voltar para o [índice](#índice)
 ## Mantendo registros do teste ##
 Existe uma forma de capturar prints das telas durante o processo de teste, permitindo assim manter registros sobre a execução dos testes, segue abaixo o código necessário:
 
@@ -534,3 +572,38 @@ Exemplo:
 
 * 1.1-login.jpg
 * 2.3.1-<nome descrito na função it>
+
+## parte-13
+voltar para o [índice](#índice)
+## Como executo os testes desse projeto? ##
+
+**Sobre os arquivos de configuração**
+
+Este projeto possui 3 arquivos de configuração, segue abaixo a descrição de cada um
+1) Config-angular.js
+
+  Esta configuração roda apenas o spec da página do google, usa o jasmine 1.x e precisa de uma boa conexão com a internet para rodar uma vez que o recurso do site não é local
+  
+2) Config-basic.js
+  
+  Esta configuração roda 1 spec apenas usando o jasmine2, O propósito é mostrar como o Jasmine funciona, logo, não faz uso de teste sobre uma aplicação, apenas executa expectations do jasmine, ou seja, não tem uso do protractor para interagir com uma aplicação.
+  
+3) Config-todos.js
+  
+  Esta configuração roda 2 specs em sequencia, o objetivo é mostrar que é possível e recomendável que se divida o teste em vários arquivos spec para deixa-lo mais fácil de manter.
+  
+**Executando os testes**
+
+Estando na raiz do seu projeto
+
+No terminal digite: 
+
+```terminal
+protractor <nome do arquivo de configuração>
+```
+
+Exemplo: 
+
+```terminal
+protractor Config-angular.js
+```
